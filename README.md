@@ -7,8 +7,9 @@
  Usage: Clone the app, ensure you have proper IAM credentials (access key/ secret key) setup using `aws configure`.  Ensure the appropriate region is selected.
 
  1. Change to the project directory
- 2. Run `npm run build`
- 3. Run `cdk deploy`
+ 2. Run `npm install`
+ 3. Run `npm run build`
+ 4. Run `cdk deploy`
 
  When finished, the output of the deployment will be 2 urls, one for the hit counter, one for the tableviewer.
 
@@ -26,6 +27,10 @@ When finshed creating some data for the able, open the table viewer in a browser
 
 When finished, in the root project directory:
 `cdk destroy`
+
+The entry point for the CDK application resides in `bin/api-crud-workshop.ts`.  From there, a new stack is created in `lib\api-crud-workshop-stack.ts`.  That stack uses `lib\hitcounter.ts` to define the dynamodb table.  The code that resides in the Lambdas themselves live in `lambda` in the root of the project. 
+
+
 
 
 
