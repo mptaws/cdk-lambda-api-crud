@@ -1,6 +1,6 @@
 # Demo Hit Counter
 
-![hit-counter.png]
+![](hit-counter.png)
 
  This CDK example builds a basic Hello World hit counter for demonstration purpose.
 
