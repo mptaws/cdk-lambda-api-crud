@@ -1,15 +1,31 @@
-# Welcome to your CDK TypeScript project!
+# Demo Hit Counter
 
-You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`ApiCrudWorkshopStack`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+![hit-counter.png]
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+ This CDK example builds a basic Hello World hit counter for demonstration purpose.
 
-## Useful commands
+ Usage: Clone the app, ensure you have proper IAM credentials (access key/ secret key) setup using `aws configure`.  Ensure the appropriate region is selected.
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+ 1. Change to the project directory
+ 2. Run `npm run build`
+ 3. Run `cdk deploy`
+
+ When finished, the output of the deployment will be 2 urls, one for the hit counter, one for the tableviewer.
+
+ Test the functionality:
+
+ `curl -i https://xxxxxxxxx.execute-api.YOUR-REGION.amazonaws.com/prod/`
+ `curl -i https://xxxxxxxxx.execute-api.YOUR-REGION.amazonaws.com/prod/hello`
+ `curl -i https://xxxxxxxxx.execute-api.YOUR-REGION.amazonaws.com/prod/hello/world`
+
+(note, you can append any querystring you like)
+
+When finshed creating some data for the able, open the table viewer in a browser to view the data now stored in DynamoDB:
+
+`https://yyyyyyyyyy.execute-api.YOUR-REGION.amazonaws.com/prod/`
+
+When finished, in the root project directory:
+`cdk destroy`
+
+
+
