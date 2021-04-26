@@ -9,7 +9,8 @@
  1. Change to the project directory
  2. Run `npm install`
  3. Run `npm run build`
- 4. Run `cdk deploy`
+ 4. Run `cdk bootstrap` 
+ 5. Run `cdk deploy`
 
  When finished, the output of the deployment will be 2 urls, one for the hit counter, one for the tableviewer.
 
